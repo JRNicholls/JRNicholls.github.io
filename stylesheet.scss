@@ -44,12 +44,15 @@ header{
   .title{
     grid-area: title;
     h1{
-      font-size: 3em;
+      font-size: 5em;
+      margin: auto;
     }
     h2{
       font-family: 'Great Vibes', cursive;
       text-align: right;
-      line-height: 0.8em;
+      line-height: 1em;
+      font-size: 3em;
+      margin: auto;
     }
   }
   .menu{
