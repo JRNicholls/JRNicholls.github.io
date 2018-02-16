@@ -23,6 +23,8 @@ header{
     "menu"
   ;
   justify-items: center;
+  max-width: 1000px;
+  margin: auto;
   .logo{
     grid-area: logo;
     img{
@@ -65,14 +67,9 @@ header{
   .menu-item:hover, .menu-item:focus{
     border-bottom: 1px solid black;
   }
-  @media (max-width: 1000px) {
-    .menu{
-      width: 100%;
-    }
-  }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header{
     display: grid;
     grid-column: 1fr 1fr 1fr;
@@ -87,7 +84,7 @@ header{
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .menuToggle{
     visibility: hidden;
   }
