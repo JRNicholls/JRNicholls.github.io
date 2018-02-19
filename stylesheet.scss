@@ -2,9 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Slabo+27px');
 
 *{
-  outline: 1px solid red;
+  //outline: 1px solid red;
   font-family: 'Slabo 27px', serif;
   font-weight: lighter;
+}
+
+body{
+  max-width: 1000px;
+  margin: auto;
 }
 
 a{
@@ -53,6 +58,7 @@ header{
     grid-area: menu;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
     width: 100%;
     justify-items: center;
   }
@@ -154,23 +160,74 @@ header{
 
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
 
   transform-origin: 0% 0%;
   visibility: hidden;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-/*
- * And let's slide it in from the left
- */
 #menuToggle input:checked ~ #menu{
   visibility: visible;
 }
 
 
 
-
 content{
+  max-width: 800px;
+  padding: 50px;
+  margin: auto;
+  .Gallery{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .Gallery-page{
+    img{
+      width: 100%;
+    }
+  }
+  .price-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin: auto;
+    .price-item{
+      width: 100%;
+    }
+  }
+  .contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    grid-template-areas: "hours location";
+    @media (max-width: 600px) {
+      grid-template-areas: "hours" "location";
+      grid-template-columns: 1fr;
+    }
+    .hours{
+      grid-area: hours;
+      display: grid;
+      grid-template-columns: 1fr 20px 1fr;
+      grid-template-areas: "day marker time";
+      .marker{
+        grid-area: marker;
+        text-align: center;
+      }
+      .day{
+        grid-area: day;
+        text-align: right;
+      }
+      .time{
+        grid-area: time;
+      }
+    }
+    .location{
+      grid-area: location;
+    }
+  }
 
 }
