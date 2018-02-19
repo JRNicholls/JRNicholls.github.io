@@ -28,10 +28,12 @@ header{
     "menu"
   ;
   justify-items: center;
+  width: 100%;
   max-width: 1000px;
   margin: auto;
   .logo{
     grid-area: logo;
+    width: 100%;
     img{
       display:block;
       margin:auto;
