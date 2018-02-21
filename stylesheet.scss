@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Slabo+27px');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 *{
   //outline: 1px solid red;
@@ -10,6 +11,7 @@
 body{
   max-width: 1000px;
   margin: auto;
+  padding: 10px;
 }
 
 a{
@@ -212,17 +214,30 @@ content{
   .contact{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-    grid-template-areas: "hours location";
-    @media (max-width: 600px) {
-      grid-template-areas: "hours" "location";
+    grid-gap: 10px;
+    grid-template-areas:
+      "hours map"
+      "details map"
+    ;
+    @media (max-width: 900px) {
+      grid-template-areas:
+        "hours"
+        "details"
+        "map"
+      ;
       grid-template-columns: 1fr;
     }
     .hours{
       grid-area: hours;
       display: grid;
       grid-template-columns: 1fr 20px 1fr;
-      grid-template-areas: "day marker time";
+      grid-template-areas:
+        "title title title"
+        "day marker time"
+      ;
+      .title{
+        grid-area: title;
+      }
       .marker{
         grid-area: marker;
         text-align: center;
@@ -235,9 +250,53 @@ content{
         grid-area: time;
       }
     }
-    .location{
-      grid-area: location;
+    .details{
+      grid-area: details;
+    }
+    .map{
+      grid-area: map;
     }
   }
+}
 
+footer{
+  display: grid;
+  height: 300px;
+  width: 100%;
+  background-color: lightgray;
+  text-align: center;
+  em{
+    margin: auto;
+  }
+  h2{
+    top: 100px;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 3em;
+    margin: auto;
+  }
+  p{
+    align-self: center;
+  }
+}
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
