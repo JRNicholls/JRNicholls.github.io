@@ -73,6 +73,7 @@ header{
     grid-gap: 50px;
     width: 100%;
     justify-items: center;
+    margin: 10px;
   }
   .menu-item{
     width: 100%;
@@ -113,77 +114,13 @@ header{
     visibility: hidden;
   }
 }
-#menuToggle{
-  position: relative;
-  z-index: 1;
+
+@keyframes slides {
+  0% {left: 1000px;}
+  20% {left: 0px;}
+  80% {left: 0px;}
+  100% {left: -1000px;}
 }
-
-#menuToggle input{
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-
-  opacity: 0;
-  z-index: 2;
-}
-
-#menuToggle span{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-
-  background: black;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s ease,
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2){
-  transform-origin: 0% 100%;
-}
-#menuToggle input:checked ~ span{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3){
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2){
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu{
-  width: 100%;
-  margin: -100px 0 0 -50px;
-
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-
-  transform-origin: 0% 0%;
-  visibility: hidden;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menuToggle input:checked ~ #menu{
-  visibility: visible;
-}
-
-
-
 content{
   max-width: 800px;
   padding: 50px;
@@ -193,16 +130,34 @@ content{
     width: 100%;
     overflow: hidden;
     margin: auto;
-    img{
-      width: 100%;
+    position: relative;
+    .button{
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0,0,0,0.05);
+      border: 0px;
     }
-    button{
-      .prev{
-
-      }
-      .next{
-
-      }
+    .button:hover{
+      background-color: rgba(0,0,0,0.2);
+    }
+    .prev{
+      position: absolute;
+      left: 0;
+      top: 225px;
+    }
+    .next{
+      position: absolute;
+      right: 0;
+      top: 225px;
+    }
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation-name: slides;
+      animation-duration: 5000ms;
+      animation-iteration-count: 300;
+      animation-timing-function: ease;
     }
   }
   .Gallery-page{
