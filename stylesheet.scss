@@ -19,9 +19,11 @@ body{
 
 h1{
   font-family: 'Crimson Text';
+  font-weight: lighter;
 }
 h2{
   font-family: 'Crimson Text';
+  font-weight: lighter;
 }
 
 header{
@@ -44,10 +46,12 @@ header{
   }
   .logo{
     grid-area: logo;
-    width: 100%;
+    min-width: 600px;
     img{
       display:block;
       margin:auto;
+
+      width: 100%;
     }
   }
   .title{
@@ -61,7 +65,7 @@ header{
   .subtitle{
     grid-area: subtitle;
     h2{
-      text-align: right;
+      text-align: center;
       font-size: 3em;
       margin: auto;
     }
@@ -76,6 +80,8 @@ header{
     margin: 10px;
   }
   .menu-item{
+    font-family: 'Crimson Text';
+    font-size: 1.5em;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -90,28 +96,28 @@ header{
 
 @media (max-width: 800px) {
   header{
-    display: grid;
-    grid-column: 1fr 1fr 1fr;
-    grid-template-areas:
-      "logo"
-      "title"
-      "subtitle menu"
-    ;
-  }
-  .menu{
-    visibility: hidden;
-  }
-}
-
-@media (min-width: 800px) {
-  .menuToggle{
-    visibility: hidden;
-  }
-  input{
-    visibility: hidden;
-  }
-  span{
-    visibility: hidden;
+    .logo{
+      grid-area: logo;
+      min-width: 300px;
+    }
+    .title{
+      h1{
+        font-size: 2em;
+      }
+    }
+    .subtitle{
+      h2{
+        font-size: 1em;
+        margin: auto;
+      }
+    }
+    .menu{
+      grid-template-columns: 1fr;
+      grid-gap: 0px;
+    }
+    .menu-item{
+      font-size: 1em;
+    }
   }
 }
 

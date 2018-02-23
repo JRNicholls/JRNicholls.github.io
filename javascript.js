@@ -30,7 +30,7 @@ function slide_next() {
     default:
       cur = 1;
   }
-  $(".test").toggle().toggle();
+  $(".toggle").toggle().toggle();
   slide_timeout = setTimeout(slide_next, slide_speed);
 }
 
